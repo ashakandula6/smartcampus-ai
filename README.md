@@ -30,6 +30,7 @@ An AI-powered smart study assistant designed for university students to streamli
 * **Styling**: Modern CSS3 (Variables, Flexbox, CSS Grid)
 
 ---
+<img width="1920" height="973" alt="image" src="https://github.com/user-attachments/assets/8aced703-302c-4e9e-8a99-8720845fa651" />
 
 ## 📁 Project Structure
 
@@ -53,4 +54,3 @@ smartcampus-ai/
 │   └── package.json          # Node dependencies tracker
 └── .gitignore                # Pushes protection control rule configurations
 
-<img width="1920" height="973" alt="image" src="https://github.com/user-attachments/assets/d7bb273d-39a4-466d-80ff-944b683bfc39" />
