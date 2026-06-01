@@ -1,0 +1,238 @@
+/* Split Layout Core Sizing bounds */
+.workspace-layout {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* Sidebar Styling Core rules */
+.sidebar {
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  margin-bottom: 24px;
+}
+
+.sidebar-header h2 {
+  font-size: 20px;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.sidebar-header .subtitle {
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.upload-btn {
+  display: block;
+  text-align: center;
+  background: var(--accent);
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.upload-btn:hover {
+  background: var(--accent-hover);
+}
+
+/* Internal Sidebar Scroll rules */
+.document-list {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-right: 4px;
+}
+
+.document-list h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.document-item {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.document-item:hover, .document-item.active {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.doc-main-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.doc-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-h);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
+
+.delete-doc-btn {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.delete-doc-btn:hover {
+  color: #ef4444;
+}
+
+.status-badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-top: 6px;
+}
+.status-badge.ready { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+.status-badge.processing { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+.status-badge.failed { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+
+/* Main Chat Panels CSS */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden; /* Lock the root component height */
+  background: var(--bg);
+}
+
+.chat-header {
+  padding: 16px 32px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.status-meta {
+  font-size: 12px;
+  margin-top: 2px;
+  color: var(--text);
+}
+
+.text-status.ready { color: #10b981; font-weight: 600; }
+.text-status.processing { color: #f59e0b; font-weight: 600; }
+
+/* Fixed Scroll Container for Messages Window */
+.messages-window {
+  flex-grow: 1;
+  padding: 24px 32px;
+  overflow-y: auto; /* Active scrolling enabled */
+  min-height: 0;   /* CRITICAL: Fixes standard CSS flexbox scrolling overflow issues */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.message-row {
+  display: flex;
+  width: 100%;
+}
+.message-row.user { justify-content: flex-end; }
+.message-row.ai { justify-content: flex-start; }
+
+.message-bubble {
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.user .message-bubble {
+  background: var(--accent);
+  color: #ffffff;
+  border-bottom-right-radius: 2px;
+}
+
+.ai .message-bubble {
+  background: var(--bg-surface);
+  color: var(--text-h);
+  border-bottom-left-radius: 2px;
+  border: 1px solid var(--border);
+}
+
+.chat-input-area {
+  padding: 16px 32px;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 12px;
+}
+
+.chat-input-area input {
+  flex-grow: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 14px;
+  outline: none;
+}
+
+.chat-input-area button {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.no-selection-state, .chat-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  color: var(--text);
+}
